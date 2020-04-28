@@ -1,0 +1,19 @@
+{% extends '../structure/no-sidebar.twig' %}
+
+{% block content %}
+  <div action="index.php" class="employ">
+    <div class="employ-wrap" id="employWrap">
+      {% include "../block/employ-step-1.twig" %}
+      {% include "../block/employ-step-2.twig" %}
+      {% include "../block/employ-step-3.twig" %}
+    </div>
+    <div class="employ-popup accepted" id="employPop">
+      <div class="employ-popup-align">
+        <div class="employ-popup-title">
+          <div>Ваша заявка в работе.</div>
+          Мы пришлем вам комплект документов.
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

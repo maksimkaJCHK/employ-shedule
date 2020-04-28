@@ -1,0 +1,78 @@
+@mixin logo {
+  display: block;
+  text-decoration: none;
+}
+@mixin logo-size($widthLogoS, $heightLogoS) {
+	@extend %logo;
+  width: $widthLogoS;
+  height: $heightLogoS;
+}
+@mixin no-user-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+} 
+@mixin animation($animation...) {
+  -o-animation: $animation;
+  -moz-animation: $animation;
+  -webkit-animation: $animation;
+  animation: $animation;
+}
+@mixin opacity($value){
+  $IEValue: $value*100;
+  opacity: $value;
+  filter: alpha(opacity=$IEValue);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
+}
+@mixin pie-clearfix {
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+@mixin clearfix {
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+@mixin micro-clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+@mixin grab {
+  cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+@mixin scrollToch {
+  touch-action: auto;
+  overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}

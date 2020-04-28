@@ -1,0 +1,38 @@
+@import "_mixin.scss";
+%htmlBody {
+	width: 100%;
+  height: 100%;
+}
+html {
+	@extend %htmlBody;
+	font: $font-main;
+	color: $font-main-color;
+	background: $background-html;
+}
+body {
+	@extend %htmlBody;
+	background: $background-body;
+}
+#main {
+	width: $main-width;
+	min-height: $main-min-height;
+	margin: $main-mar;
+	background: $background-main;
+}
+#wrapper {
+	@if $site-status == limited {
+		@include wrapper-setting-limited;
+		margin: $wrapper-mar;
+	}
+	padding: 0 16px;
+	min-height: 100vh;
+	box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+	background: $background-wrapper;
+}
+@if $site-status == full {
+	.wrapper {
+		@include wrapper-setting-full;
+		margin: $wrapper-mar;
+		padding: $wrapper-pad-top $wrapper-pad-right $wrapper-pad-bottom $wrapper-pad-left;
+	}
+}
